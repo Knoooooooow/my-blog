@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { BlogComponent } from './blog/blog.component';
+import { MainComponent } from './main.component';
 
 
 const routes: Routes = [
     {
-        path: 'login', component:LoginComponent
+        path: '',
+        component:MainComponent,
+        children:[
+            {
+                path: 'blog',
+                loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule),
+            },
+            {
+                path: '',
+                loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule),
+            }
+        ]
     },
     {
-        path: 'blog', loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule),
-    },
-    {
-        path: '', component:LoginComponent
+        path: 'login', component: LoginComponent
     },
 ];
 
@@ -21,3 +29,17 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class MainRoutingModule { }
+/*
+    {
+        path: '',
+        redirectTo: '/main/blog',
+        pathMatch: 'full'
+    },
+    {
+        path: 'login', component: LoginComponent
+    },
+    {
+        path: 'blog',
+        loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule),
+    },
+ */

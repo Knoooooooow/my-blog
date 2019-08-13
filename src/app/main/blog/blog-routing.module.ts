@@ -5,12 +5,17 @@ import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
     {
-        path: '', component:IndexComponent
+        path: '',
+        redirectTo: '/main/blog/index',
+        pathMatch: 'full'
+    },
+    {
+        path: 'index', component: IndexComponent
     },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class BlogRoutingModule { }
