@@ -5,10 +5,11 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
 import { IndexComponent } from './index/index.component';
 import { CanvasArcComponent } from './canvas-arc/canvas-arc.component';
+import { PersonalPracticeComponent } from './personal-practice/personal-practice.component';
 
 
 @NgModule({
-  declarations: [BlogComponent, IndexComponent, CanvasArcComponent],
+  declarations: [BlogComponent, IndexComponent, CanvasArcComponent, PersonalPracticeComponent],
   imports: [
     CommonModule,
     BlogRoutingModule

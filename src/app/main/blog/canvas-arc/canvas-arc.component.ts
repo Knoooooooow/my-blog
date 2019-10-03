@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Subject } from 'rxjs';
-
 @Component({
     selector: 'app-canvas-arc',
     templateUrl: './canvas-arc.component.html',
@@ -15,21 +13,8 @@ export class CanvasArcComponent implements OnInit, AfterViewInit {
     ) { }
 
     ngOnInit() {
-        this.mockHttpGET();
-    }
-
-    mockHttpGET() {
-        let mockSubject = new Subject<any>();
         
-        mockSubject.subscribe(data=>{
-            console.log(data);
-        });
-        mockSubject.subscribe(data=>{
-            console.log(data);
-        });
-        mockSubject.next(Math.random()*10);
     }
-
     ngAfterViewInit(): void {
         let context = this.canvasArc.nativeElement.getContext('2d');
         context.lineWidth = 5;
