@@ -1,3 +1,4 @@
+import { IndexService } from './../../shared/service/index/index.service';
 import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-personal-practice',
@@ -6,12 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalPracticeComponent implements OnInit {
 
-    constructor() { }
+    constructor(private indexService:IndexService) { }
 
     ngOnInit() {
-        console.log(this.distinct(this.mockArray,this.mockArray2));
-        console.log(this.findMaxString(this.mockString));
+        
     }
+    // token 两个，如果401就需要调用refresh token接口，拿取新的，一个401了，其他的不能触发并发，
+    token(){
+        this.indexService.getToken().subscribe(data=>{
+            console.log(data);
+        })
+    }
+
+
+
+
+
+
+
+
     mockString = 'aasdasddddaaaaaabbbbbccasdawdxvxchjbnaw';
     mockArray = [1,2,3,4,5,6];
     mockArray2 = [1,2,3,4,5,6];

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -22,5 +22,11 @@ export class IndexService {
                 { id: 20, name: 'Tornado' }
               ])
         }, 500);
+    }
+    getToken():Observable<any>{
+        return of({
+            idToken:1,
+            refreshToken:2
+        })
     }
 }
