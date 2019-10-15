@@ -7,17 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalPracticeComponent implements OnInit {
 
-    constructor(private indexService:IndexService) { }
+    constructor(private indexService: IndexService) { }
 
     ngOnInit() {
-        
+        this.test.push({buy:123});
     }
-    // token 两个，如果401就需要调用refresh token接口，拿取新的，一个401了，其他的不能触发并发，
-    token(){
-        this.indexService.getToken().subscribe(data=>{
+    test:Array<NameArgs> = [];
+    token() {
+        this.indexService.getToken().subscribe(data => {
             console.log(data);
         })
+        this.printName({buy:123,value: 'abc'});
     }
+    printName<T extends NameArgs>(arg: T) {
+        console.log(arg.buy);
+        return arg;
+    }
+    
+
+    getFind<T>(items: T[], callback: (item: T, index: number) => boolean): T | undefined {
+        for (let i = 0, length = items.length; i < length; i++) {
+            if (callback(items[i], i)) {
+                return items[i]
+            }
+        }
+    }
+
+    items = [{ a: 1 }, { a: 2 }, { a: 4 }, null];
+    result = this.getFind(this.items, (item, index) => item.a === 2);
 
 
 
@@ -27,14 +44,14 @@ export class PersonalPracticeComponent implements OnInit {
 
 
     mockString = 'aasdasddddaaaaaabbbbbccasdawdxvxchjbnaw';
-    mockArray = [1,2,3,4,5,6];
-    mockArray2 = [1,2,3,4,5,6];
-    findMaxString(str:string){
-        let obj ={};
+    mockArray = [1, 2, 3, 4, 5, 6];
+    mockArray2 = [1, 2, 3, 4, 5, 6];
+    findMaxString(str: string) {
+        let obj = {};
         for (let i = 0; i < str.length; i++) {
-            if(!obj[str.charAt(i)]){
+            if (!obj[str.charAt(i)]) {
                 obj[str.charAt(i)] = 1;
-            }else{
+            } else {
                 obj[str.charAt(i)] += 1;
             }
         }
@@ -58,4 +75,9 @@ export class PersonalPracticeComponent implements OnInit {
         console.log(obj);
         return result
     }
+}
+
+interface NameArgs {
+    buy: number;
+    value?:any;
 }
