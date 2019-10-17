@@ -1,4 +1,8 @@
-<div id="index">
-    <canvas #canvas class="canvas" width="800" height="800"></canvas>
-</div>
-<app-personal-practice></app-personal-practice>
+<app-nav-bar></app-nav-bar>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav class="sidenav" mode="side" opened>
+        <app-side-bar></app-side-bar>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">Main content</mat-sidenav-content>
+</mat-sidenav-container>
