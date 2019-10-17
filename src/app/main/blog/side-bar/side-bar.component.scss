@@ -1,0 +1,36 @@
+.mat-tree-sidebar {
+    .no-mat-tree-node {
+        opacity: 0;
+    }
+    .mat-tree-node {
+        cursor: pointer;
+        color: #444;
+        background-color: transparent;
+        transition: background-color 0.2s;
+        &:hover {
+            background-color: #dbdbdb;
+            color: #3f51b5;
+            text-shadow: 0 0 5px #fff;
+        }
+        .mat-tree-node-button {
+            cursor: pointer;
+            outline: none;
+            background: none;
+            border: none;
+            border-radius: 50%;
+        }
+    }
+    ul {
+        margin-top: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+    }
+    li {
+        margin-top: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+    }
+    .mat-tree-invisible {
+        display: none;
+    }
+}

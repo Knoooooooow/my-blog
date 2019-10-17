@@ -1,0 +1,53 @@
+.mat-toolbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    .example-fill-remaining-space {
+        flex: 1 1 auto;
+    }
+    .more-vert-button {
+        cursor: pointer;
+        outline: none;
+        background-color: inherit;
+        border: none;
+        color: #ffffff;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: rgb(61, 78, 174);
+        }
+    }
+    .index-home {
+        box-sizing: border-box;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-decoration: none;
+        cursor: pointer;
+        outline: 0;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        margin: 0;
+        min-width: 64px;
+        line-height: 36px;
+        padding: 0 16px;
+        border-radius: 4px;
+        overflow: visible;
+        justify-content: center;
+        align-items: center;
+        background-color: inherit;
+        transition: background-color 0.3s;
+        > span {
+            padding-left: 1rem;
+        }
+        &:hover {
+            background: rgb(61, 78, 174);
+        }
+    }
+    
+}

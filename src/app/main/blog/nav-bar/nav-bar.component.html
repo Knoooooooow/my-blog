@@ -1,0 +1,21 @@
+<mat-toolbar class="mat-toolbar" color="primary">
+    <a class="mat-button index-home" (click)="redirectToIndex()" href="javascript:;" matRipple
+        [matRippleColor]="myColor">
+        <i class="material-icons">
+            home
+        </i>
+        <span>Weird Blog</span>
+    </a>
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <button class="more-vert-button" mat-icon-button [matMenuTriggerFor]="appMenu" matRipple [matRippleColor]="myColor">
+        <i class="material-icons">
+            more_vert
+        </i>
+    </button>
+    <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>关于</button>
+        <button mat-menu-item>帮助</button>
+    </mat-menu>
+</mat-toolbar>
