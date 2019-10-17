@@ -7,15 +7,16 @@ import { MainComponent } from './main.component';
 const routes: Routes = [
     {
         path: '',
-        component:MainComponent,
-        children:[
+        component: MainComponent,
+        children: [
             {
                 path: 'blog',
                 loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule),
             },
             {
                 path: '',
-                loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule),
+                redirectTo: 'blog',
+                pathMatch: 'full'
             }
         ]
     },

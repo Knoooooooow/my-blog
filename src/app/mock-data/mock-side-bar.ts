@@ -1,24 +1,35 @@
 export interface SideBarNode {
     name: string;
+    route?: string,
     children?: SideBarNode[];
 }
 export const sideBarData: SideBarNode[] = [
     {
         name: '简介',
+        route: 'main/blog/index/canvas-arc'
     }, {
-        name: 'Vegetables',
+        name: '个人练习',
         children: [
             {
-                name: 'Green',
+                name: '一些console',
                 children: [
-                    { name: 'Broccoli' },
-                    { name: 'Brussel sprouts' },
+                    {
+                        name: '个人练习console' ,
+                        route:'main/blog/index/personal-practice'
+                    },
+                    {
+                        name: 'Brussel sprouts' 
+                    },
                 ]
             }, {
                 name: 'Orange',
                 children: [
-                    { name: 'Pumpkins' },
-                    { name: 'Carrots' },
+                    {
+                        name: 'Pumpkins' 
+                    },
+                    {
+                        name: 'Carrots' 
+                    },
                 ]
             },
         ]

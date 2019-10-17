@@ -14,7 +14,8 @@ const routes: Routes = [
             },
             {
                 path: '',
-                loadChildren: () => import('./main/main.module').then(mod => mod.MainModule),
+                redirectTo:'main',
+                pathMatch:'full'
             }
         ]
     }
@@ -25,14 +26,3 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
-/*
-    {
-        path: '',
-        redirectTo: '/main',
-        pathMatch: 'full'
-    },
-    {
-        path: 'main',
-        loadChildren: () => import('./main/main.module').then(mod => mod.MainModule),
-    },
-*/

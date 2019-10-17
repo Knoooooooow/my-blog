@@ -15,7 +15,7 @@ export class SideBarComponent implements OnInit {
     treeControl = new NestedTreeControl<SideBarNode>(node => node.children);
     dataSource = new MatTreeNestedDataSource<SideBarNode>();
 
-    constructor() {
+    constructor(private router:Router) {
         this.dataSource.data = sideBarData;
     }
 
@@ -24,10 +24,15 @@ export class SideBarComponent implements OnInit {
     ngOnInit() {
 
     }
-    redirectTo(node,e:Event) {
-        console.log(node);
-        e.stopPropagation();
-        // this.router.navigate(['/main/blog/index']);
+    redirectTo(node:SideBarNode,e?:Event) {
+        if(node && node.route){
+            this.router.navigate([node.route]);
+        }
+        
+        if(e){
+            e.stopPropagation();
+        }
+        
     }
 
 

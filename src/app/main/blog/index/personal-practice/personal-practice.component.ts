@@ -1,4 +1,4 @@
-import { IndexService } from './../../shared/service/index/index.service';
+import { IndexService } from './../../../shared/service/index/index.service';
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 @Component({
     selector: 'app-personal-practice',

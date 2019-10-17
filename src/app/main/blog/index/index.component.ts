@@ -11,6 +11,7 @@ export class IndexComponent implements OnInit {
 
     @Input()
     color: ThemePalette;
+    matMenu:any;
 
     @ViewChild(MatMenuTrigger,{ static: true }) trigger: MatMenuTrigger;
 

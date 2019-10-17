@@ -5,14 +5,14 @@
     "types": []
   },
   "angularCompilerOptions": {
-    "enableIvy": true
+    "enableIvy": false
   },
   "files": [
     "src/main.ts",
     "src/polyfills.ts"
   ],
   "include": [
-    "*.ts"
+    "src/**/*.ts"
     
   ],
   "exclude": [

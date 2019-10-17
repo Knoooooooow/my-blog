@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IndexComponent } from './index/index.component';
-import { CanvasArcComponent } from './canvas-arc/canvas-arc.component';
+import { BlogComponent } from './blog.component';
 
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: '/main/blog/index',
-        pathMatch: 'full'
-    },
-    {
-        path: 'index', component: IndexComponent
-    },
-    {
-        path: 'canvas-arc', component: CanvasArcComponent
+        component:BlogComponent,
+        children:[
+            {
+                path: 'index',
+                loadChildren: () => import('./index/index.module').then(mod => mod.IndexModule),
+            },
+            {
+                path: '',
+                redirectTo:'index',
+                pathMatch:'full'
+            }
+        ]
     },
 ];
 
