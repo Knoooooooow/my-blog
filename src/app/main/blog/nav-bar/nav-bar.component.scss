@@ -8,18 +8,7 @@
     .example-fill-remaining-space {
         flex: 1 1 auto;
     }
-    .more-vert-button {
-        cursor: pointer;
-        outline: none;
-        background-color: inherit;
-        border: none;
-        color: #ffffff;
-        transition: background-color 0.3s;
-        &:hover {
-            background-color: rgb(61, 78, 174);
-        }
-    }
-    .index-home {
+    .nav-button{
         box-sizing: border-box;
         position: relative;
         -webkit-user-select: none;
@@ -32,74 +21,45 @@
         border: none;
         -webkit-tap-highlight-color: transparent;
         display: flex;
+        background-color: inherit;
+        justify-content: center;
+        align-items: center;
+        transition: color 0.1s;
+        &:hover {
+            color: rgb(186, 214, 241);
+        }
+    }
+    .more-vert-button {
+        cursor: pointer;
+        outline: none;
+        border: none;
+        color: #ffffff;
+    }
+    .index-home {
+        
         margin: 0;
         min-width: 64px;
         line-height: 36px;
         padding: 0 16px;
         border-radius: 4px;
-        justify-content: center;
-        align-items: center;
-        background-color: inherit;
-        transition: background-color 0.3s;
         > span {
             padding-left: 1rem;
         }
-        &:hover {
-            background: rgb(61, 78, 174);
-        }
     }
     .nav-icon {
-        box-sizing: border-box;
-        position: relative;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        text-decoration: none;
-        cursor: pointer;
-        outline: 0;
-        border: none;
-        -webkit-tap-highlight-color: transparent;
-        display: flex;
         margin: 0;
         min-width: 36px;
         line-height: 36px;
         padding: 16px 16px;
         border-radius: 4px;
-        justify-content: center;
-        align-items: center;
-        background-color: inherit;
-        transition: background-color 0.3s;
         > span {
             padding-left: 1rem;
         }
-        &:hover {
-            background: rgb(61, 78, 174);
-        }
     }
     .nav-sm{
-        box-sizing: border-box;
-        position: relative;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        text-decoration: none;
-        cursor: pointer;
-        outline: 0;
-        border: none;
-        -webkit-tap-highlight-color: transparent;
-        display: flex;
         margin: 0;
         line-height: 36px;
         padding: 0 16px;
         border-radius: 4px;
-        justify-content: center;
-        align-items: center;
-        background-color: inherit;
-        transition: background-color 0.3s;
-        &:hover {
-            background: rgb(61, 78, 174);
-        }
     }
 }

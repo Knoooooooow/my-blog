@@ -5,33 +5,35 @@ export interface SideBarNode {
 }
 export const sideBarData: SideBarNode[] = [
     {
-        name: '简介',
+        name: '模拟倒计时',
         route: 'main/blog/index/canvas-arc'
     }, {
-        name: '个人练习',
+        name: '模拟数据',
         children: [
             {
-                name: '一些console',
+                name: '点不了',
                 children: [
                     {
-                        name: '个人练习console' ,
-                        route:'main/blog/index/personal-practice'
+                        name: '测试数据1',
                     },
                     {
-                        name: 'Brussel sprouts' 
+                        name: '测试数据2' 
                     },
                 ]
             }, {
-                name: 'Orange',
+                name: '还是点不了',
                 children: [
                     {
-                        name: 'Pumpkins' 
+                        name: '测试数据3' 
                     },
                     {
-                        name: 'Carrots' 
+                        name: '测试数据4' 
                     },
                 ]
             },
         ]
+    }, {
+        name: '七巧板',
+        route:'main/blog/index/personal-practice'
     },
 ];
