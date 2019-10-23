@@ -31,3 +31,19 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+@media screen and (max-width: 599px) {
+    #app{
+        .example-container {
+            top:56px;
+        }
+        .mat-toolbar{
+            padding: 0;
+            .index-home,.nav-sm{
+                padding: 10px;
+            }
+            .more-vert-button{
+                padding: 14px;
+            }
+        }
+    }
+}
