@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { ThemePalette, MatMenuTrigger } from '@angular/material';
+import { ThemePalette, MatMenuTrigger, MatDrawer } from '@angular/material';
 import { Router } from '@angular/router';
+import { IndexService } from './../../shared/service/index/index.service';
+import { APP_SETTINGS } from '../../settings/settings';
 
 @Component({
     selector: 'app-index',
@@ -11,22 +13,29 @@ export class IndexComponent implements OnInit {
 
     @Input()
     color: ThemePalette;
-    matMenu:any;
-
-    @ViewChild(MatMenuTrigger,{ static: true }) trigger: MatMenuTrigger;
-
-    constructor(private router:Router) {
+    matMenu: any;
+    mode = 'push';
+    hasBackdrop = false;
+    APP_SETTINGS = APP_SETTINGS;
+    //side
+    @ViewChild(MatMenuTrigger, { static: true }) trigger: MatMenuTrigger;
+    @ViewChild('drawer', { static: true }) drawer: MatDrawer;
+    constructor(private router: Router, private indexService: IndexService) {
 
     }
-    redirectToIndex(){
+    redirectToIndex() {
         this.router.navigate(['main/blog/index']);
     }
     someMethod() {
         this.trigger.openMenu();
     }
-    
+
     ngOnInit() {
-
+        this.indexService.changeEmitted$.subscribe(
+            text => {
+                if (text == 'resize') {
+                    this.drawer.toggle();
+                }
+            });
     }
-
 }

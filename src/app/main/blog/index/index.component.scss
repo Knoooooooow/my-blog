@@ -1,27 +1,17 @@
-
 .example-container {
     position: absolute;
-    top: 0;
+    top: 64px;
     bottom: 0;
     left: 0;
     right: 0;
     background: #eee;
-    .sidenav{
-        position: fixed;
-        top: 64px;
-        bottom: 0;
-        left: 0;
-        padding: 0;
-        min-width: 260px;
+    .sidenav {
         background-color: #fff;
-        box-shadow: 6px 0 6px rgba(0,0,0,.1);
+        box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
     }
-    .sidenav-content{
-        padding: 64px 0rem 0rem 0rem;
-        .sidenav-content-container{
-            overflow: auto;
-            padding: 1rem 0rem 1rem 0rem;
-            height: 100%;
-        }
+    .sidenav-content-container {
+        overflow: auto;
+        padding: 1rem 0rem 1rem 0rem;
+        height: 100%;
     }
 }

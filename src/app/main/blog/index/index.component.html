@@ -1,12 +1,12 @@
 <app-nav-bar></app-nav-bar>
 
-<mat-sidenav-container class="example-container">
-    <mat-sidenav class="sidenav" mode="side" opened>
+<mat-drawer-container class="example-container" [hasBackdrop]="APP_SETTINGS.hasBackdrop">
+    <mat-drawer class="sidenav" #drawer [mode]="APP_SETTINGS.mode">
         <app-side-bar></app-side-bar>
-    </mat-sidenav>
-    <mat-sidenav-content class="sidenav-content">
+    </mat-drawer>
+    <mat-drawer-content>
         <div class="sidenav-content-container">
             <router-outlet></router-outlet>
         </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+    </mat-drawer-content>
+</mat-drawer-container>

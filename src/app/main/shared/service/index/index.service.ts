@@ -1,13 +1,24 @@
 import { Injectable } from '@angular/core';
-import { of, Observable } from 'rxjs';
+import { of, Observable, Subject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class IndexService {
 
-    constructor() { }
-    getMockData(){
+    constructor() {
+        
+    }
+
+    private emitChangeSource = new Subject<any>();
+    changeEmitted$ = this.emitChangeSource.asObservable();
+    emitChange(change: any) {
+        this.emitChangeSource.next(change);
+    }
+    resizeWidth() {
+
+    }
+    getMockData() {
         setTimeout(() => {
             return of([
                 { id: 11, name: 'Dr Nice' },
@@ -20,13 +31,13 @@ export class IndexService {
                 { id: 18, name: 'Dr IQ' },
                 { id: 19, name: 'Magma' },
                 { id: 20, name: 'Tornado' }
-              ])
+            ])
         }, 500);
     }
-    getToken():Observable<any>{
+    getToken(): Observable<any> {
         return of({
-            idToken:1,
-            refreshToken:2
+            idToken: 1,
+            refreshToken: 2
         })
     }
 }

@@ -48,6 +48,35 @@
             background: rgb(61, 78, 174);
         }
     }
+    .nav-icon {
+        box-sizing: border-box;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-decoration: none;
+        cursor: pointer;
+        outline: 0;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        margin: 0;
+        min-width: 36px;
+        line-height: 36px;
+        padding: 16px 16px;
+        border-radius: 4px;
+        justify-content: center;
+        align-items: center;
+        background-color: inherit;
+        transition: background-color 0.3s;
+        > span {
+            padding-left: 1rem;
+        }
+        &:hover {
+            background: rgb(61, 78, 174);
+        }
+    }
     .nav-sm{
         box-sizing: border-box;
         position: relative;

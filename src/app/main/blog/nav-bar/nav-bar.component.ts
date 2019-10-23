@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
+import { IndexService } from './../../shared/service/index/index.service';
 
 @Component({
     selector: 'app-nav-bar',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
 
     color: string;
-    constructor(private router: Router) {
+    constructor(private router: Router,private rd:Renderer2,private indexService: IndexService) {
 
     }
     redirectToIndex() {
@@ -18,5 +19,7 @@ export class NavBarComponent implements OnInit {
 
     ngOnInit() {
     }
-
+    displayMenu(){
+        this.indexService.emitChange('resize');
+    }
 }
