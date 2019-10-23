@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
 
 <mat-drawer-container class="example-container" [hasBackdrop]="APP_SETTINGS.hasBackdrop">
-    <mat-drawer class="sidenav" #drawer [mode]="APP_SETTINGS.mode">
+    <mat-drawer class="sidenav" #drawer [mode]="APP_SETTINGS.mode" [opened]="APP_SETTINGS.opened">
         <app-side-bar></app-side-bar>
     </mat-drawer>
     <mat-drawer-content>

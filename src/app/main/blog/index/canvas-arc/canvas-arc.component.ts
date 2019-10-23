@@ -70,7 +70,6 @@ export class CanvasArcComponent implements OnInit, AfterViewInit, OnDestroy {
         let curTime = new Date();
         let ret = this.endTime.getTime() - curTime.getTime();
         ret = Math.round(ret / 1000);
-        console.log(ret);
         return ret >= 0 ? ret : 0;
     }
     upDate() {
