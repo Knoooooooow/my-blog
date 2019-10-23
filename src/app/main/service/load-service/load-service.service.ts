@@ -27,6 +27,7 @@ export class LoadServiceService {
                         SET_APP_SETTINGS({
                             mode : 'over',
                             hasBackdrop : true,
+                            opened:false
                         })
                     }
                 }
