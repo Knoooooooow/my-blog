@@ -14,7 +14,7 @@ export class SideBarComponent implements OnInit {
 
     treeControl = new NestedTreeControl<SideBarNode>(node => node.children);
     dataSource = new MatTreeNestedDataSource<SideBarNode>();
-
+    node:any;
     constructor(private router:Router) {
         this.dataSource.data = sideBarData;
     }

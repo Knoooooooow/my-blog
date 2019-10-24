@@ -9,6 +9,7 @@ import { IndexService } from './../../shared/service/index/index.service';
 })
 export class NavBarComponent implements OnInit {
 
+    myColor: string;
     color: string;
     constructor(private router: Router,private rd:Renderer2,private indexService: IndexService) {
 
