@@ -2,26 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
-## Development server
+## 如果您想直接使用github预览，跳过繁琐的安装
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+请直接访问如下链接 https://knoooooooow.github.io/my-blog 
+由于是[静态资源]的原因，路由暂不支持，不要刷新页面
 
-## Code scaffolding
+## 这是什么？
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[一个博客] 目前处在开发第一阶段，纯静态前端项目，未来一定支持移动端
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## 如何启动？
+npm install => ng serve =>访问 http://localhost:4200/
