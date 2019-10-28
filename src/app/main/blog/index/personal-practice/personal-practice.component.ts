@@ -25,7 +25,7 @@ export class PersonalPracticeComponent implements OnInit, AfterViewInit {
     }
     
 
-    getFind<T>(items: T[], callback: (item: T, index: number) => boolean): T | undefined {
+    getFind<T>(items: Array<T>, callback: (item: T, index: number) => boolean): T | undefined {
         for (let i = 0, length = items.length; i < length; i++) {
             if (callback(items[i], i)) {
                 return items[i]
@@ -122,7 +122,6 @@ export class PersonalPracticeComponent implements OnInit, AfterViewInit {
         },
     ]
     ngAfterViewInit(): void {
-        console.log(this.canvas);
         let context = this.canvas.nativeElement.getContext('2d');
         this.mockData.forEach(element => {
             this.draw(element, context);

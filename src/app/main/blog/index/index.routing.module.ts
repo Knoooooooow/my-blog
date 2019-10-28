@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CanvasArcComponent } from './canvas-arc/canvas-arc.component';
 import { IndexComponent } from './index.component';
 import { PersonalPracticeComponent } from './personal-practice/personal-practice.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,10 @@ const routes: Routes = [
             {
                 path: 'personal-practice', component: PersonalPracticeComponent 
             },
+            {
+                path: 'calendar', component: CalendarComponent
+            },
+            
             {
                 path: '', 
                 redirectTo: 'canvas-arc', 

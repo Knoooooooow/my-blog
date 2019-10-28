@@ -32,7 +32,6 @@ export class CanvasArcComponent implements OnInit, AfterViewInit, OnDestroy {
         let context = this.canvasArc.nativeElement.getContext('2d');
         context.width = this.WINDOW_WIDTH;
         context.height = this.WINDOW_HEIGHT;
-        console.log(context);
         this.curShowTimeSeconds = this.getCurrentShowTimeSeconds();
         this.refreshCanvas = setInterval(() => {
             this.render(context);

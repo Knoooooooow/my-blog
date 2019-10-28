@@ -7,6 +7,7 @@ import { CanvasArcComponent } from './canvas-arc/canvas-arc.component';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { SideBarComponent } from '../side-bar/side-bar.component';
 import { PersonalPracticeComponent } from './personal-practice/personal-practice.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 
@@ -16,7 +17,8 @@ import { PersonalPracticeComponent } from './personal-practice/personal-practice
         CanvasArcComponent,
         NavBarComponent,
         SideBarComponent,
-        PersonalPracticeComponent
+        PersonalPracticeComponent,
+        CalendarComponent
     ],
     imports: [
         SharedModule,

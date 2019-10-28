@@ -1,0 +1,58 @@
+.calendar{
+    width: 430px;
+    .cal-header{
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        .calendar-spacer{
+            flex: 1 1 auto;
+        }
+        .date-select{
+            width: 80px;
+            height: 40px;
+        }
+        .icon-button{
+            width: 40px;
+            height: 40px;
+        }
+        >button{
+            position: relative;
+            user-select: none;
+            cursor: pointer;
+            outline: 0;
+            border: none;
+            background: transparent;
+        }
+    }
+    .cal-container{
+        .week-list{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            .week-item{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5px;
+                cursor: pointer;
+                margin: 0 5px;
+            }
+        }
+        .date-list{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            .date-item{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5px;
+                cursor: pointer;
+                margin: 0 5px;
+            }
+            .selected{
+                color: #3478f7;
+            }
+        }
+    }
+}

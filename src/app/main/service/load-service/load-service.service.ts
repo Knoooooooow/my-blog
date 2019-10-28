@@ -13,7 +13,6 @@ export class LoadServiceService {
     getSettings(): Promise<any> {
 
         const promise = new Promise((resolve, reject) => {
-            console.log(`检查是否为PC端`);
             resolve();
             if (10 < 9) {
                 reject();

@@ -35,5 +35,9 @@ export const sideBarData: SideBarNode[] = [
     }, {
         name: '七巧板',
         route:'main/blog/index/personal-practice'
+    }, {
+        name: '日历',
+        route:'main/blog/index/calendar'
     },
+    
 ];
