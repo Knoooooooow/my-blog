@@ -24,7 +24,7 @@
         </div>
         <div class="date-list">
             <div class="date-item" *ngFor="let day of month"
-            [ngClass]="{'selected': day.selected}">
+                [ngClass]="{'selected': day.selected,'holder': day.holder}">
                 {{day.text}}
             </div>
         </div>
