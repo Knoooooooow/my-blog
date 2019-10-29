@@ -10,7 +10,7 @@
             flex: 1 1 auto;
         }
         .date-select{
-            width: 80px;
+            width: 120px;
             height: 40px;
         }
         .icon-button{
@@ -55,6 +55,21 @@
             }
             .holder{
                 cursor: default;
+            }
+        }
+        .year-list{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            .year-item{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5px;
+                cursor: pointer;
+                margin: 0 5px;
+            }
+            .selected{
+                color: #3478f7;
             }
         }
     }

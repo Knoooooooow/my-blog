@@ -1,32 +1,43 @@
 <div class="calendar">
     <div class="cal-header">
-        <button class="icon-button">
+        <button class="icon-button" (click)="arrowClick('previous')">
             <i class="material-icons">
                 keyboard_arrow_left
             </i>
         </button>
         <div class="calendar-spacer"></div>
-        <button class="date-select">
-            12月
+        <button class="date-select" (click)="selectShowYear()">
+            {{showYear}}年 {{showMonth + 1}}月
         </button>
         <div class="calendar-spacer"></div>
-        <button class="icon-button">
+        <button class="icon-button" (click)="arrowClick('next')">
             <i class="material-icons">
                 keyboard_arrow_right
             </i>
         </button>
     </div>
     <div class="cal-container">
-        <div class="week-list">
-            <div class="week-item" *ngFor="let item of week">
-                {{item.cnName}}
+        <ng-container *ngIf="!isShowSelectYear && !isShowSelectMonth">
+            <div class="week-list">
+                <div class="week-item" *ngFor="let item of week">
+                    {{item.cnName}}
+                </div>
             </div>
-        </div>
-        <div class="date-list">
-            <div class="date-item" *ngFor="let day of month"
-                [ngClass]="{'selected': day.selected,'holder': day.holder}">
-                {{day.text}}
+            <div class="date-list">
+                <div class="date-item" *ngFor="let day of month"
+                    [ngClass]="{'selected': day.selected,'holder': day.holder}">
+                    {{day.text}}
+                </div>
             </div>
-        </div>
+        </ng-container>
+        <ng-container *ngIf="isShowSelectYear">
+            <div class="year-list">
+                <div class="year-item" *ngFor="let year of years" 
+                    [ngClass]="{'selected': year.selected}"
+                    (click)="selectYear(year)">
+                    {{year.text}}
+                </div>
+            </div>
+        </ng-container>
     </div>
 </div>
