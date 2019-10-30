@@ -10,20 +10,20 @@ export class PersonalPracticeComponent implements OnInit, AfterViewInit {
     constructor(private indexService: IndexService) { }
 
     ngOnInit() {
-        this.test.push({buy:123});
+        console.log(this.bubbleSort([6, 2, 3, 1, 2, 3, 4, 5]));
     }
-    test:Array<NameArgs> = [];
+    test: Array<NameArgs> = [];
     token() {
         this.indexService.getToken().subscribe(data => {
             console.log(data);
         })
-        this.printName({buy:123,value: 'abc'});
+        this.printName({ buy: 123, value: 'abc' });
     }
     printName<T extends NameArgs>(arg: T) {
         console.log(arg.buy);
         return arg;
     }
-    
+
 
     getFind<T>(items: Array<T>, callback: (item: T, index: number) => boolean): T | undefined {
         for (let i = 0, length = items.length; i < length; i++) {
@@ -56,6 +56,19 @@ export class PersonalPracticeComponent implements OnInit, AfterViewInit {
             }
         }
         return obj;
+    }
+
+    bubbleSort(arr: Array<any>) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {        //相邻元素两两对比
+                    let temp = arr[j + 1];        //元素交换
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr;
     }
     distinct(a, b) {
         //需要去重的数组
@@ -143,5 +156,5 @@ export class PersonalPracticeComponent implements OnInit, AfterViewInit {
 
 interface NameArgs {
     buy: number;
-    value?:any;
+    value?: any;
 }
