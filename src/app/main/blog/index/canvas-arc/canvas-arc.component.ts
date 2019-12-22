@@ -14,7 +14,7 @@ export class CanvasArcComponent implements OnInit, AfterViewInit, OnDestroy {
     RADIUS = 8;
     MARGIN_TOP = 60;
     MARGIN_LEFT = 30;
-    endTime = new Date(2019, 9, 28, 6, 55, 55);
+    endTime = new Date(new Date().getTime() + 86400000);
     curShowTimeSeconds = 0;
     numberOfFrames = 25;
     ball = { x: 521, y: 100, r: 20, g: 2, vx: -4, vy: 0, color: "#005588" }//
