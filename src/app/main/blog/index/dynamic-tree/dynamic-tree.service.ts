@@ -6,37 +6,59 @@ import { map } from 'rxjs/operators';
 
 
 
-export class DynamicFlatNode {
-    constructor(public item: string, public level = 1, public expandable = false,
-        public isLoading = false) { }
-}
 
+export interface DynamicFlatNode {
+    nodeRef: string,
+    name: string,
+    level: number,
+    hasChildren: boolean,
+    isLoading?:boolean,
+    children?:Array<DynamicFlatNode>
+}
 /**
  * Database for dynamic data. When expanding a node in the tree, the data source will need to fetch
  * the descendants data from the database.
  */
 export class DynamicDatabase {
-    dataMap = new Map<string, string[]>([
-        ['Fruits', ['Apple', 'Orange', 'Banana']],
-        ['Vegetables', ['Tomato', 'Potato', 'Onion']],
-        ['Apple', ['Fuji', 'Macintosh']],
-        ['Onion', ['Yellow', 'White', 'Purple']]
-    ]);
+    data:Array<DynamicFlatNode> = [
+        {
+            nodeRef: '1',
+            name: 'Tom',
+            level: 0,
+            hasChildren: true,
+            // children: [{ name: 'Jack', level: 1, nodeRef: '11', hasChildren: false }]
+        },
+        {
+            nodeRef: '2',
+            name: 'Tom2',
+            level: 0,
+            hasChildren: true,
+            // children: [{ name: 'Jack2', level: 1, nodeRef: '22', hasChildren: false }]
+        }
+    ];
 
-    rootLevelNodes: string[] = ['Fruits', 'Vegetables'];
+    getChildrenCustom(nodeId) {
+        for (let i = 0; i < this.data.length; i++) {
+            const element = this.data[i];
+            if (element.nodeRef == nodeId) {
+                return element;
+            }
+        }
+    }
+    isHasChildren(nodeId): boolean {
+        for (let i = 0; i < this.data.length; i++) {
+            const element = this.data[i];
+            if (element.nodeRef == nodeId) {
+                return element.hasChildren;
+            }
+        }
+    }
 
     /** Initial data from database */
-    initialData(): DynamicFlatNode[] {
-        return this.rootLevelNodes.map(name => new DynamicFlatNode(name, 0, true));
+    initialData() {
+        return this.data;
     }
 
-    getChildren(node: string): string[] | undefined {
-        return this.dataMap.get(node);
-    }
-
-    isExpandable(node: string): boolean {
-        return this.dataMap.has(node);
-    }
 }
 
 /**
@@ -50,9 +72,9 @@ export class DynamicDatabase {
 @Injectable()
 export class DynamicDataSource {
 
-    dataChange = new BehaviorSubject<DynamicFlatNode[]>([]);
+    dataChange = new BehaviorSubject<any[]>([]);
 
-    get data(): DynamicFlatNode[] { return this.dataChange.value; }
+    get data() { return this.dataChange.value; }
     set data(value: DynamicFlatNode[]) {
         this._treeControl.dataNodes = value;
         this.dataChange.next(value);
@@ -86,7 +108,7 @@ export class DynamicDataSource {
      * Toggle the node, remove from display list
      */
     toggleNode(node: DynamicFlatNode, expand: boolean) {
-        const children = this._database.getChildren(node.item);
+        const children = this._database.getChildrenCustom(node.nodeRef);
         const index = this.data.indexOf(node);
         if (!children || index < 0) { // If no children, or cannot find the node, no op
             return;
@@ -96,8 +118,7 @@ export class DynamicDataSource {
 
         setTimeout(() => {
             if (expand) {
-                const nodes = children.map(name =>
-                    new DynamicFlatNode(name, node.level + 1, this._database.isExpandable(name)));
+                const nodes = [{ name: 'Jack', level: 1, nodeRef: '11', hasChildren: false }];
                 this.data.splice(index + 1, 0, ...nodes);
             } else {
                 let count = 0;

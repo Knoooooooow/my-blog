@@ -23,9 +23,9 @@ export class DynamicTreeComponent implements OnInit {
 
     getLevel = (node: DynamicFlatNode) => node.level;
 
-    isExpandable = (node: DynamicFlatNode) => node.expandable;
+    isExpandable = (node: DynamicFlatNode) => node.hasChildren;
 
-    hasChild = (_: number, _nodeData: DynamicFlatNode) => _nodeData.expandable;
+    hasChild = (_: number, _nodeData: DynamicFlatNode) => _nodeData.hasChildren;
     ngOnInit() {
         console.log(this.dataSource.data);
         
