@@ -14,30 +14,20 @@ export const sideBarData: SideBarNode[] = [
                 name: '点不了',
                 children: [
                     {
-                        name: '测试数据1',
-                    },
-                    {
-                        name: '测试数据2' 
+                        name: '测试数据2'
                     },
                 ]
             }, {
-                name: '还是点不了',
-                children: [
-                    {
-                        name: '测试数据3' 
-                    },
-                    {
-                        name: '测试数据4' 
-                    },
-                ]
+                name: '动态树',
+                route: 'main/blog/index/dynamic-tree'
             },
         ]
     }, {
         name: '七巧板',
-        route:'main/blog/index/personal-practice'
+        route: 'main/blog/index/personal-practice'
     }, {
         name: '日历',
-        route:'main/blog/index/calendar'
+        route: 'main/blog/index/calendar'
     },
-    
+
 ];

@@ -4,6 +4,7 @@ import { CanvasArcComponent } from './canvas-arc/canvas-arc.component';
 import { IndexComponent } from './index.component';
 import { PersonalPracticeComponent } from './personal-practice/personal-practice.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { DynamicTreeComponent } from './dynamic-tree/dynamic-tree.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,9 @@ const routes: Routes = [
             },
             {
                 path: 'calendar', component: CalendarComponent
+            },
+            {
+                path: 'dynamic-tree', component: DynamicTreeComponent
             },
             
             {
