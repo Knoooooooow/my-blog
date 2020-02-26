@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material';
 import { MatSliderModule } from '@angular/material/slider';
@@ -29,9 +30,13 @@ const MATERIAL_MODULES = [
     declarations: [],
     imports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
         ...MATERIAL_MODULES
     ],
     exports: [
+        FormsModule,
+        ReactiveFormsModule,
         ...MATERIAL_MODULES,
     ]
 })

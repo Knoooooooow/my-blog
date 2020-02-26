@@ -9,8 +9,7 @@ import { SideBarComponent } from '../side-bar/side-bar.component';
 import { PersonalPracticeComponent } from './personal-practice/personal-practice.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DynamicTreeComponent } from './dynamic-tree/dynamic-tree.component';
-
-
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
     declarations: [
@@ -25,7 +24,8 @@ import { DynamicTreeComponent } from './dynamic-tree/dynamic-tree.component';
     imports: [
         SharedModule,
         IndexRoutingModule,
-        CommonModule
+        CommonModule,
+        QuillModule
     ]
 })
 export class IndexModule { }

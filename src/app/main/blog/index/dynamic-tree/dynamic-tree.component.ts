@@ -1,34 +1,85 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { FlatTreeControl } from '@angular/cdk/tree';
-import { DynamicDataSource, DynamicFlatNode, DynamicDatabase } from './dynamic-tree.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-dynamic-tree',
     templateUrl: './dynamic-tree.component.html',
-    styleUrls: ['./dynamic-tree.component.scss'],
-    providers: [DynamicDatabase]
+    styleUrls: ['./dynamic-tree.component.scss']
 })
 export class DynamicTreeComponent implements OnInit {
 
-    constructor(database: DynamicDatabase) {
-        this.treeControl = new FlatTreeControl<DynamicFlatNode>(this.getLevel, this.isExpandable);
-        this.dataSource = new DynamicDataSource(this.treeControl, database);
-
-        this.dataSource.data = database.initialData();
+    constructor() {
     }
-
-    treeControl: FlatTreeControl<DynamicFlatNode>;
-
-    dataSource: DynamicDataSource;
-
-    getLevel = (node: DynamicFlatNode) => node.level;
-
-    isExpandable = (node: DynamicFlatNode) => node.hasChildren;
-
-    hasChild = (_: number, _nodeData: DynamicFlatNode) => _nodeData.hasChildren;
     ngOnInit() {
-        console.log(this.dataSource.data);
-        
+
     }
+    htmlText = '';
+    hasFocus = false;
+    quillConfig = {
+        toolbar: {
+            container: [
+                ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+                ['code-block'],
+                [{ header: 1 }, { header: 2 }], // custom button values
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
+                [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
+                [{ direction: 'rtl' }], // text direction
+
+                [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
+                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+                [{ font: [] }],
+                [{ align: [] }],
+
+                ['clean'], // remove formatting button
+
+                ['link'],
+                ['link', 'image', 'video']
+            ]
+        },
+        keyboard: {
+            bindings: {
+                shiftEnter: {
+                    key: 13,
+                    shiftKey: true,
+                    handler: (range, context) => {
+                        // Handle shift+enter
+                        console.log('shift+enter');
+                    }
+                },
+                enter: {
+                    key: 13,
+                    handler: (range, context) => {
+                        console.log('enter');
+                        return true;
+                    }
+                }
+            }
+        }
+    };
+
+    test = event => {
+        console.log(event.keyCode);
+    };
+
+    onSelectionChanged = event => {
+        if (event.oldRange == null) {
+            this.onFocus();
+        }
+        if (event.range == null) {
+            this.onBlur();
+        }
+    };
+
+    onContentChanged = event => {
+        //console.log(event.html);
+    };
+
+    onFocus = () => {
+        console.log('On Focus');
+    };
+    onBlur = () => {
+        console.log('Blurred');
+    };
 
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadServiceService } from './main/service/load-service/load-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { QuillModule } from 'ngx-quill';
 
 export function get_settings(appLoadService: LoadServiceService) {
     return () => appLoadService.getSettings();
@@ -18,7 +19,8 @@ export function get_settings(appLoadService: LoadServiceService) {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    QuillModule.forRoot()
   ],
   providers: [
     LoadServiceService,
