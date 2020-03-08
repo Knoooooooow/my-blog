@@ -1,0 +1,22 @@
+<p>test-sf works!</p>
+
+<div class="border">
+    <p>Greet Component</p>
+    <div style="border: 1px solid #666;margin: 4px;">
+        <div style="border: 1px solid red;margin: 5px;">
+            <ng-content select="header"></ng-content>
+        </div>
+        <div style="border: 1px solid green;margin: 5px;">
+            <ng-content select=".card_body"></ng-content>
+        </div>
+        <div style="border: 1px solid blue;margin: 5px;">
+            <ng-content select="footer"></ng-content>
+        </div>
+    </div>
+</div>
+<app-test-sf-child [customTemplateRef]="tpl"></app-test-sf-child>
+<ng-template #tpl let-name="n" let-age="a">
+    <p>我是在父组件中声明的，然后插入到子组件中的template</p>
+    <p>Hello {{name}}!</p>
+    <p> I am {{age}}!</p>
+</ng-template>

@@ -10,6 +10,8 @@ import { PersonalPracticeComponent } from './personal-practice/personal-practice
 import { CalendarComponent } from './calendar/calendar.component';
 import { DynamicTreeComponent } from './dynamic-tree/dynamic-tree.component';
 import { QuillModule } from 'ngx-quill';
+import { TestSfComponent } from './test-sf/test-sf.component';
+import { TestSfChildComponent } from './test-sf-child/test-sf-child.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import { QuillModule } from 'ngx-quill';
         SideBarComponent,
         PersonalPracticeComponent,
         CalendarComponent,
-        DynamicTreeComponent
+        DynamicTreeComponent,
+        TestSfComponent,
+        TestSfChildComponent
     ],
     imports: [
         SharedModule,

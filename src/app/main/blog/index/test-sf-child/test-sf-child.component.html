@@ -1,0 +1,7 @@
+<p>test-sf-child works!</p>
+<button (click)="display = !display">Toggle content</button>
+<ng-container *ngIf="display">
+    <ng-template [ngTemplateOutlet]="customTemplateRef"
+    [ngTemplateOutletContext]="myContext">
+    </ng-template>
+</ng-container>

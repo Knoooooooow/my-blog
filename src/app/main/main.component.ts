@@ -10,9 +10,9 @@ export class MainComponent implements OnInit {
     constructor(private http: HttpClient) { }
 
     ngOnInit() {
-        this.http.get('/api').subscribe(data => {
-            console.log(data);
-        })
+        // this.http.get('/api').subscribe(data => {
+        //     console.log(data);
+        // })
     }
 
 }

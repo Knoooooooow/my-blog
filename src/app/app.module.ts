@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadServiceService } from './main/service/load-service/load-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
+import { ToastModule } from './main/shared/components/toast/toast.module';
 
 export function get_settings(appLoadService: LoadServiceService) {
     return () => appLoadService.getSettings();
@@ -20,7 +21,9 @@ export function get_settings(appLoadService: LoadServiceService) {
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+
+    ToastModule.forRoot()
   ],
   providers: [
     LoadServiceService,

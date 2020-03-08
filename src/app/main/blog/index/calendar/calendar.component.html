@@ -32,8 +32,7 @@
         </ng-container>
         <ng-container *ngIf="isShowSelectYear">
             <div class="year-list">
-                <div class="year-item" *ngFor="let year of years" 
-                    [ngClass]="{'selected': year.selected}"
+                <div class="year-item" *ngFor="let year of years" [ngClass]="{'selected': year.selected}"
                     (click)="selectYear(year)">
                     {{year.text}}
                 </div>
@@ -41,3 +40,9 @@
         </ng-container>
     </div>
 </div>
+
+<app-test-sf>
+    <header>Card Header</header>
+    <div class="card_body">Card Body</div>
+    <footer>Card Footer</footer>
+</app-test-sf>
