@@ -28,6 +28,9 @@ export const sideBarData: SideBarNode[] = [
     }, {
         name: '日历',
         route: 'main/blog/index/calendar'
-    },
+    }, {
+        name: '杂七杂八',
+        route: 'main/blog/index/everything'
+    }
 
 ];

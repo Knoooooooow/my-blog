@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
 const MATERIAL_MODULES = [
     MatFormFieldModule,
     MatSliderModule,
@@ -23,7 +24,8 @@ const MATERIAL_MODULES = [
     MatSidenavModule,
     MatTreeModule,
     MatSelectModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatButtonModule
 ];
 
 @NgModule({

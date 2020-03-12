@@ -12,6 +12,8 @@ import { DynamicTreeComponent } from './dynamic-tree/dynamic-tree.component';
 import { QuillModule } from 'ngx-quill';
 import { TestSfComponent } from './test-sf/test-sf.component';
 import { TestSfChildComponent } from './test-sf-child/test-sf-child.component';
+import { EverythingComponent } from './everything/everything.component';
+import { DynamicComponent } from './dynamic-component/dynamic.component';
 
 @NgModule({
     declarations: [
@@ -23,13 +25,16 @@ import { TestSfChildComponent } from './test-sf-child/test-sf-child.component';
         CalendarComponent,
         DynamicTreeComponent,
         TestSfComponent,
-        TestSfChildComponent
+        TestSfChildComponent,
+        EverythingComponent,
+        DynamicComponent
     ],
     imports: [
         SharedModule,
         IndexRoutingModule,
         CommonModule,
         QuillModule
-    ]
+    ],
+    entryComponents: [DynamicComponent]
 })
 export class IndexModule { }

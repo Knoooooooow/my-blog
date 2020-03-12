@@ -40,7 +40,36 @@ export class PersonalPracticeComponent implements OnInit, AfterViewInit {
 
 
 
+    test2() {
+        let reverse = (x: number) => {
+            let maxNumber = 2147483647;
 
+            if (x >= maxNumber) {
+                return 0;
+            }
+            let xArray = x.toString().split('');
+            let newxArray = [];
+            let result = null;
+            if (x < 0) {
+                xArray.shift();
+            }
+            for (let i = xArray.length - 1; i >= 0; i--) {
+                newxArray.push(xArray[i])
+            }
+            if (x >= 0) {
+                return newxArray.join('');
+            }
+            if (x < 0) {
+                result = newxArray.join('');
+                if (result >= maxNumber) {
+                    return 0;
+                }
+                return result - (2 * result);
+            }
+        };
+        let a = 1534236469;
+        console.log(reverse(a));
+    }
 
 
     mockString = 'aasdasddddaaaaaabbbbbccasdawdxvxchjbnaw';
@@ -69,6 +98,21 @@ export class PersonalPracticeComponent implements OnInit, AfterViewInit {
             }
         }
         return arr;
+    }
+
+    anums = [2, 7, 11, 15, 2, 2, 2, 2, 7, 15];
+    atarget = 30;
+    twoSum(nums, target) {
+
+        let targetMap = new Map();
+        for (let i = 0; i < nums.length; i++) {
+            const element = nums[i];
+            let key = target - element
+            if (targetMap.has(key)) {
+                return [targetMap.get(key), i]
+            }
+            targetMap.set(element, i)
+        }
     }
     distinct(a, b) {
         //需要去重的数组
